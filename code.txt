@@ -1,0 +1,375 @@
+# as the immortal Anonymous said:
+" Think this is chhesy?
+"Let's see you do better"
+
+#unique RL
+
+
+def main():
+    
+   for i in range(0,10000):
+       episode(j):
+
+
+def episode(j):
+
+   for i in range(0,10):
+	agent[i] = create_agent()
+		
+
+
+   for t in range(0,101):
+	step( t ):
+
+	for a in pop:
+		RL(a)	
+
+
+def step( t ):
+
+	p0, p1, p2 = map[0], map[1], map[2]
+
+
+				# P_0 always 2  - plants
+	for a in p0.pop:
+		a.e += 2 / p0.pop.length
+
+				# P_1 max 5 for all - honey
+	p1.invest = min( p1.invest * 1.5, 5)
+	for a in p1.pop:
+		a.e += 2 / p0.pop.length
+
+				# P_2 max 10 for 1 - game
+	p2.invest = min( p2.invest * 1.5, 10)
+	a = rnd_item( p2.pop)
+		a.e += p2.invest
+
+	for p in map:		
+		p.invest = 0
+
+
+		# update energies
+
+	for a in agent:
+		a.e -= 1/ rnd(0,1)	# sick ?
+
+		a.e = max( a.e, 0)
+		a.e_hist[t] = a.e
+		
+
+	for a in agent:		
+		a.in = [ peer: [] ]
+		a.in.here = [ a.pos, a.e, t]
+		for b in map[a.pos]:
+			a.in.peer.add( [b.id, b.e, b.out] )  	// include out.talk
+
+		a.out = a.eval_nn( a.in )		//parallel ?
+
+
+	for a in agent.shuffle():
+		if a.out.dest >= 0
+			move( a.out, a.out.dest )
+	
+		if a.out.give !=0
+			give( a, a.out.b, a.out.give )
+
+		map[a.pos].invest += a.out.invest
+	
+	
+def move(a, pos):
+	map[pos].remove(a)
+	a.pos = pos
+
+def give(a,b, val)
+	if (val < 0) 
+		a.e -= val * 0.3; 
+		b.e -= val
+	else if (val > 0)
+		a.e -= val * 0.3; 
+		b.e -= val		
+
+
+
+
+# calculate final rank of episode
+
+o = []
+for a in agent:
+	a.sum = a.e_hist[30] + a.e_hist[60] + a.e_hist[100]
+	o.add(a.sum)
+
+a.rank = find( o, a.sum)
+a.$ = 10- rank
+
+	
+# kinship ??
+# add rank of kin to agent's
+
+for a in agent:
+	a.rank += b.rank * kindegree(a,b)
+
+
+
+
+
+
+--------------------------------------------------
+
+
+optimizer = optim.Adam(policy.parameters(), lr=1e-2)
+
+state = torch.from_numpy(state).float().unsqueeze(0)
+    probs = policy(Variable(state))
+    action = probs.multinomial()
+    policy.saved_actions.append(action)
+
+rewards = []
+    for r in policy.rewards[::-1]:
+        R = r + args.gamma * R
+        rewards.insert(0, R)
+    rewards = torch.Tensor(rewards)
+    rewards = (rewards - rewards.mean()) / (rewards.std() + np.finfo(np.float32).eps)
+    for action, r in zip(policy.saved_actions, rewards):
+        action.reinforce(r)
+    optimizer.zero_grad()
+    autograd.backward(policy.saved_actions, [None for _ in policy.saved_actions])
+    optimizer.step()
+
+# select-k-of-n
+
+a = nn.sort()
+threshold = a[a.length * 0.15]
+nn = nn > threshold  ? 1 : 0 	//vectorize
+
+# AST to Nat Lang
+
+# ? 
+
+#Nat Lang to AST
+# train GRU/ echo NN to recognize generated utterances
+
+
+
+# episodic memory set-get info
+
+def set_h( pointer, data):
+
+   #hard
+
+  simil[i] = cos(pointer, hip[i] )
+  i = pos_max( simil )
+  hip[i] = data
+
+   #soft
+
+  simil = cos(pointer, hip)  		//vectorized
+  hip = hip * (1-simil) +  data*simil
+
+
+def get_h( pointer, data):
+
+  simil[i] = cos(pointer, hip[i] )
+  i = pos_max( simil )
+  return hip[i]
+
+
+	# working-memory-task-vector
+
+
+
+
+
+dif = F_real - F_expect
+
+	# dream ?
+
+	// episodic -> sementic, RL
+
+
+	# WM
+
+
+
+
+  bdi
+
+  route hip, a.sem, [a * belief]
+  route RL.critic,  [a.goal]
+
+#receive-input
+[]
+
+
+
+
+#update
+
+
+# no   gauss(0, 1)		//gauss( mean, sd)
+# few, gauss(0.3, 1.5)
+# maybe
+# probably
+# sure
+ 
+# 1 
+# 2 
+# 3
+
+# next / prev
+			//shift 1 unit
+curve += 1
+
+curve -= 1
+
+# compare
+ - normalize
+
+curve_action = 
+expected_return = 
+
+
+
+
+emotions/moods: happy, sad, 
+
+# happy : invest E, love, friends, build explore
+
+happy_score <- min( expected_return, 0)  
+autobio[happy->] <- happy_score
+invest E < -happy_score
+love 	<-happy_score	  
+friends <-happy_score
+build  happy_score
+explore
+
+
+
+# sad : low return action
+
+sad_score = expected_return
+autobio[sad->] <- happy_score
+
+
+
+$a < $invest
+
+anger,   // potential: hurt B IF B dont do what you want
+fear,   // potential:  run from B IF B dont do what you want
+
+surprise / unexpected -> see curiosity below
+
+
+bored, 
+
+drives: 
+drive_feed <- a.e /  MAX_E
+
+socialize <- 0.5 
+talk
+
+curiosity, $ += reduce uncertainty (distribution variance)
+
+
+ 
+
+
+
+interact w/ X -> move where X is ->ask ´x pos'
+
+(inner) AST -> natural lang
+NL -> GRU.LSTM;echo -> AST
+
+
+actions/senses: move ,
+ see, 
+speak/hear, 
+give
+live/die, 
+mate, 
+birth/pregnant)
+
+space: path origin goal 
+near far  
+come, leave, 
+wait,
+search/find,, 
+
+time  
+before/ after, during, 
+again, never, x times, 
+period; age; 
+new; old; 
+early; late; 
+now; soon; 
+fast; slow; 
+hurry; delay; 
+begin; last; end; 
+
+agent  i you, someone, 
+
+object,  this/that, same/other/else, food, (words?) 
+
+
+motion ; move; turn; walk; run; go; come; 
+ go away; follow; reach, arrive; approach; 
+
+place; put, stay, wait; remain; leave; quiet;
+ collect; join; separate; divide; hide, conceal;
+
+
+
+Facial expressions 
+happy,
+
+
+a & b 
+a or b
+not a
+count 1,2,3
+
+
+
+kin traverse tree (recursive)
+
+kin : father, mother, son/daugther, sibling, marry, husband/wife
+ 
+human being; man; woman;
+ 
+cousin, uncle, 
+ boy; girl; child; infant; 
+
+
+
+
+bdi: want think feel know – learn, forget, secret, sure, 
+
+logic: true -false and or not  // but
+
+kind/ like (this) way / possession, part
+
+modal: because , if/then, can, 
+(wishes, desires, requests, warnings, 
+prohibitions, commands, predictions, 
+possibilities, (ir)reality
+
+imperative! interrogative? 
+
+event choose, try, do, there is, happen, only,
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
