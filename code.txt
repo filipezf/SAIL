@@ -115,6 +115,44 @@ for a in agent:
 
 --------------------------------------------------
 
+quantum gravity lorentz contraction observable
+
+
+
+
+ok, like when i helped you, soo bad
+(ok / this is like (I helped you) / soo bad)
+
+angry @ B -> prove/suggest B wrong // embarass B
+
+
+please try or soon I'll choose someone not so coward-ish and better friend
+((please try) or (I choose-fut some person, adj: not (so coward ish [as you]) and better friend [than you])
+
+
+insist -> bargain X or threat -> polite (please X) 
+or [not friend => ally new] i-wi ll choose someone [better compare]   
+not (so coward ish )
+and
+better friend [than you]
+
+
+i am, uhh, just showing this area to her, love
+
+
+(wanna see new things @ P99 ?)  <impl mate?>
+
+my argument (A):
+X = (evolved) rationality + occam's prior [munschen trilemma, etc] 
+O = qualia (observations)
+O ---- |bayesian inference (X)| ----> world model (WM) =  QG + SM + cosmology 
+WM -> (theory of) evolution (E)
+[ergo - consistency, coherent (non self-defeating) belief system)]:
+WM,E -> O
+E -> X -> A
+
+
+
 
 optimizer = optim.Adam(policy.parameters(), lr=1e-2)
 
@@ -274,7 +312,7 @@ curiosity, $ += reduce uncertainty (distribution variance)
 
 
 
-interact w/ X -> move where X is ->ask ´x pos'
+interact w/ X -> move where X is ->ask Â´x pos'
 
 (inner) AST -> natural lang
 NL -> GRU.LSTM;echo -> AST
@@ -341,7 +379,7 @@ cousin, uncle,
 
 
 
-bdi: want think feel know – learn, forget, secret, sure, 
+bdi: want think feel know â€“ learn, forget, secret, sure, 
 
 logic: true -false and or not  // but
 
