@@ -1,5 +1,5 @@
-# SIMWL
+# SAIL
 
-Social Intelligence by Micro World and Language
+Social Artificial Intelligence using Language
 
 xx
