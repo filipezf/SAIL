@@ -304,7 +304,7 @@ class Agent():
                 v =  ['mate','give','hit','speak'][op]
                 #ag = agent_from_wm( wm[0]) 
                 ag = random.choice(pop)
-                self.action.append( (v ,ag) )
+                self.action.append( Z(s=self, v=v ,o=ag) )
             if op  in [4,5,6,7]:
                 #wm[1] = supervised_out([nn_before, nn_after, nn_bdi, nn_can][op-4], wm[0] )  
                 net = [nn_before, nn_after, nn_bdi, nn_can][op-4]
@@ -442,7 +442,7 @@ def rand_mem(self):
     
 def seek_mem(self, x):
     for y in self.em1:
-        if y.s == s and y.v == s.v and y.o==x.o: return y
+        if y.s == s and y.v == s.v and y.o == x.o: return y
     return None
     
     nn = self.nn 
@@ -497,7 +497,7 @@ def step1(self): #concepts, biases, etc
     opt = 1 #random.randint(10) 
     if opt == 1:
            # s v o -ed -> "s v o ed" -> s v o -ed 
-       t1 = random.randint(env.T-5, env.T)
+       '''t1 = random.randint(env.T-5, env.T)
        self.zero()
        #nn[epmem] = 1
        #nn[node(t1,'time')] = 1    
@@ -505,8 +505,15 @@ def step1(self): #concepts, biases, etc
        x = random.randint(400,500-1) 
        nn[x]=1
        self.spread()
-       self.action.append( [speak, self])
+       self.action.append( [speak, self])'''
        
+       if len(self.em1) >0:
+           mem = random.choice( self.em1)
+           txt = copy.copy(mem) 
+           txt.t = _ed
+           self.action.append( Z(s=self, v=speak, o = random.sample(pop,3), txt=mem ) )
+           
+           
     if opt ==2:
            #s v o will -> "s v o will" -> s v o will        
        nn[expect] = 1
@@ -551,10 +558,11 @@ def step1(self): #concepts, biases, etc
          
          if '_' in [txt.s, txt.v, txt.o, txt.txt, txt.t]:
              actions.append([speak, txt if answer is not None else ''])
-         
+             pass
          else: #  y/n?
-             actions.append([speak , 'yes' if answer is not None else 'no'])     
-      
+             #actions.append([speak , 'yes' if answer is not None else 'no'])     
+             pass
+        
     cmd = seek_mem(self,Z(v='speak', op='!', o=self,  t = env.T))
     if cmd is not None: 
          append_goal(cmd.txt)
