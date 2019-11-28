@@ -88,11 +88,32 @@ class Agent():
             
             actions.append( toAction( vout ) )
             
-            #model based:        
-           #plan:
+            #model based / plan        
+            
+            
+            
+            
+            
+            
+            
+            
+            nn_fut( s )= st+x
+            nn_past(s)= st-x
+            x,b x.d, x.i = converge(x.b, x.d, x.i) <= hard values
+            ev2 = getCause / getConseq( ev1)
+            imagine ( ev)
+            goal
+            
+            
+            
+            
+
               vec1 -> vec2    a,b,c attrib
               u = Q(pred)
-       # a ignore b - nn -> a like I -> a mate I -> $
+              
+              
+              
+               # a ignore b - nn -> a like I -> a mate I -> $
 
               # if, because, try, can, 
               # believe, want -ed, will
@@ -101,13 +122,7 @@ class Agent():
            x = future(x)
            b,d,i = bdi(b,d,i)
            wm = op(task, wm)
-                
-    
-          
-    
-          goal: b friend <-
-          say to b a lies 
-    
+     
          # x.e < 10 => goals.append( feed x) -> c give x
     
            net = [nn_before, nn_after, nn_bdi, nn_can][op-4]
@@ -189,64 +204,28 @@ class Agent():
         if i==6:
             a = random.choice(pop)
             ev = getGoal(a)
-            return Z(s = a, v= want, txt=ev)         
+            return Z(s = a, v= want, txt=ev)    
+        
+        if i==7:
+            a = question()
+            a.mod = '?'
+            return a
+        
+        if i==8:
+            a = cmd()
+            a.mod = '!'
+            return a
         
         
     def hearDummy(self, ev):
         v = ev.v
-        if t== None:
-            ev = getPastEvent(-1)
-            ev.t = None
-            return ev
-        
-        if t == _ed:
-            ev = getPastEvent()
-            ev.t = _ed
-            return ev
-        
-        if t == will:
-            ev = predictFutureEvent()
-            ev.t = will
-            return ev
-        
-        if v==IF: 
-            a = generateRandomEvent()
-            b = predictFuture(a)            
-            return Z(s = a, v= IF, txt=b)
-            
-        if v==because: 
-            a = getPastEvent()
-            b = getCause(a)            
-            return Z(s = a, v= because, txt=b)
-
-        if m==can:
-            a = random.choice(pop)
-            ev = getPossibleAction(a)
-            ev.m = can
-            return ev
-
-        if v==believe:
-            a = random.choice(pop)
-            ev = getBelief(a)
-            return Z(s = a, v= believe, txt=ev)            
-            
-        if v==want:
-            a = random.choice(pop)
-            ev = getGoal(a)
-            return Z(s = a, v= want, txt=ev)    
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-
-
-    
-    
+        if t== None:    addEpMem(ev)  
+        elif t == _ed:    addEpMemPast(ev)
+        elif t == will:   addPssibleFuture(ev)
+        elif v == IF:    setPredictModel(a,b)
+        elif v==because:   setPredictModel(a,b)
+        elif m==can:      setPossibleAction(a, txt)
+        elif v==believe:  informBelief(a, txt)
+        elif v==want:     informGoal(a, txt)        
+        elif ev.mod == '?':  pass        
+        elif ev.mod == '!': self.setGoal(ev)
