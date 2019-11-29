@@ -1,0 +1,123 @@
+nn, v
+
+
+
+ctx
+wm
+t
+ev
+value
+cause
+
+
+def input()
+
+
+
+seek_mem():
+ t =, s =  value = ...
+
+
+
+for i in range(NLAYERS)
+   ctx[i] = random_connect( ctx[j < i]
+
+
+
+
+train_nn
+   nn_past.loss( ctx, ctx[t-1] 
+   nn_fut.loss( ctx, ctx[t+1]
+   nn_bdi = b, d, i
+
+
+
+ev = []
+
+ev[i] = ev[j]
+
+
+magnitude
+bigger, smaller, compare
+
+
+process
+
+
+introspection:
+  get goal
+  set goal
+  get/set belief
+  model _self
+
+
+
+# answer questions abous past, future, capabilities, goals
+
+
+
+# get food
+
+
+
+# ask mate
+
+
+
+# lie
+# detect (?) lie
+
+
+
+
+# call partners to hit enemy
+# receive call
+
+
+
+
+
+# train nn
+
+
+
+# pretend play ( utility of this decreases with agent's network "age" )
+
+
+# tell a story
+
+
+# feel happy (birth child), sad (death kin)
+
+
+
+# ask join group
+
+
+# tell a gossip
+
+
+#
+
+
+# tell a joke
+
+# answer what happen after dead
+
+
+# ask help big agent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
