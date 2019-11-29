@@ -86,72 +86,31 @@ class Agent():
             # model-free
             vout = NN ( vinp )
             
-            actions.append( toAction( vout ) )
+            
+            act = toAction( vout )
+            if act.confidence > 0.5:
+                actions.append( act )
             
             #model based / plan        
             
             
-            
-            
-            
-            
-            
-            
-            nn_fut( s )= st+x
-            nn_past(s)= st-x
-            x,b x.d, x.i = converge(x.b, x.d, x.i) <= hard values
-            ev2 = getCause / getConseq( ev1)
-            imagine ( ev)
-            goal
-            
-            
-            
-            
-
-              vec1 -> vec2    a,b,c attrib
-              u = Q(pred)
-              
-              
-              
-               # a ignore b - nn -> a like I -> a mate I -> $
-
-              # if, because, try, can, 
-              # believe, want -ed, will
-
-    
-           x = future(x)
-           b,d,i = bdi(b,d,i)
-           wm = op(task, wm)
-     
-         # x.e < 10 => goals.append( feed x) -> c give x
-    
-           net = [nn_before, nn_after, nn_bdi, nn_can][op-4]
-           wm[0] = torch.from_numpy( np.zeros([WM_LEN,]) ).float()
-           wm[1] = net( wm[0] ) 
-                #if op in           goals.append( wm)
-                #if op == 11 :      goals.remove(wm)            
-                #if op== 12:        wm = search_em( ctx)               
-                #if op==13:         wm = find_goal( g, ctx)
-                #if op == 5         wm2 = nn( op_vec, wm) 
-    
-       
-       # compare
-
-       update_weight( task, u)
+        if coin(0.3):            
+        #if max( [act.confidence for act in actions]) < 0.5:
+        
+            options = []
+            for a  in self.sampleActions(3):                
+                c = self.getConsequences(a )
+                u = Q(c)
+                options.append( a ,u) )
+                
+            options.sort(key:lambda :x[0]) 
+                
+            actions.append( options[0][1] )         
         
         
-        # update supervised networks
-        
-          supervised(nn_before, wm[1], wm[0])     # nn[before]=1, train
-            supervised(nn_after, wm[0], wm[1])
-            b= foo[s]
-            supervised( can, wm[0] ,b, foo)
-            
-            #bg, bw = inspect_goal_want(b)
-            unsupervised(nn_bdi, bg, bw, foo)
-        
-        
-         self.log = []
+        self.updateRL(a,c,u)        
+        self.updateSupervisedNetworks(a,c)
+        self.log = []
      
              
     def input1(self, foo):
@@ -166,66 +125,66 @@ class Agent():
         i = random.randint(-1,8)
         
         if i==-1:
-            ev = getPastEvent(-1)
+            ev = self.getPastEvent(-1)
             ev.t = None
             return ev
         
         if i==0:
-            ev = getPastEvent()
+            ev = self.getPastEvent()
             ev.t = _ed
             return ev
         
         if i==1:
-            ev = predictFutureEvent()
+            ev = self.predictFutureEvent()
             ev.t = will
             return ev
         
         if i==2: 
-            a = generateRandomEvent()
-            b = predictFuture(a)            
+            a = self.generateRandomEvent()
+            b = self.predictFuture(a)            
             return Z(s = a, v= IF, txt=b)
             
         if i==3: 
-            a = getPastEvent()
-            b = getCause(a)            
+            a = self.getPastEvent()
+            b = self.getCause(a)            
             return Z(s = a, v= because, txt=b)
 
         if i==4:
             a = random.choice(pop)
-            ev = getPossibleAction(a)
+            ev = self.getPossibleAction(a)
             ev.m = can
             return ev
 
         if i==5:
             a = random.choice(pop)
-            ev = getBelief(a)
+            ev = self.getBelief(a)
             return Z(s = a, v= believe, txt=ev)            
             
         if i==6:
             a = random.choice(pop)
-            ev = getGoal(a)
+            ev = self.getGoal(a)
             return Z(s = a, v= want, txt=ev)    
         
         if i==7:
-            a = question()
+            a = self.getQuestion()
             a.mod = '?'
             return a
         
         if i==8:
-            a = cmd()
+            a = self.getcmd()
             a.mod = '!'
             return a
         
         
     def hearDummy(self, ev):
-        v = ev.v
-        if t== None:    addEpMem(ev)  
-        elif t == _ed:    addEpMemPast(ev)
-        elif t == will:   addPssibleFuture(ev)
-        elif v == IF:    setPredictModel(a,b)
-        elif v==because:   setPredictModel(a,b)
-        elif m==can:      setPossibleAction(a, txt)
-        elif v==believe:  informBelief(a, txt)
-        elif v==want:     informGoal(a, txt)        
-        elif ev.mod == '?':  pass        
-        elif ev.mod == '!': self.setGoal(ev)
+        v,t,m,mod = ev.v, ev.t, ev.m, ev.mod
+        if t== None:    self.addEpMem(ev)  
+        elif t == _ed:    self.addEpMemPast(ev)
+        elif t == will:  self. addPssibleFuture(ev)
+        elif v == IF:    self.setPredictModel(a,b)
+        elif v==because:   self.setPredictModel(a,b)
+        elif m==can:      self.setPossibleAction(a, txt)
+        elif v==believe:  self.informBelief(a, txt)
+        elif v==want:     self.informGoal(a, txt)        
+        elif mod == '?':  self.answer(ev)        
+        elif mod == '!': self.setGoal(ev)
