@@ -1,34 +1,72 @@
-nn, v
+# create generic past
+
+for ():
+	random events():
 
 
 
-ctx
-wm
-t
-ev
-value
-cause
+def step():
+   for i in range(100):	
+   if done >0 
+	break 
 
 
-def input()
+def step0():
+     logarithmic_ts
+      stripes = stripes + G*stripes1    #wm
+        # supervised
+
+     u = mate + energy + friend+ reciprocal + kin
+
+     
+     nn_all --ctrol--> hip   complete pattern
+     hip --ctrol--> nn_all
+
+    short_term_mem 
+    store traces
+
+    # replan ?
+     
+
+
+    x_believe -> gate beliefs
+
+    x_before 
+    x_after,
+    x_can
+
+   for i in range(N):
+       layer[i+1] = ReLU(layer[i] )
+   multimodal
+
+   layer[i+1] = ctx + RELU( layer[i] )
 
 
 
-seek_mem():
- t =, s =  value = ...
+
+wm_ctx/task # stripes
+
+generate
+
+ctx -> automatic vs generic
+
+generic -> cache memory
 
 
 
-for i in range(NLAYERS)
-   ctx[i] = random_connect( ctx[j < i]
+uncertainty
+
+
+
+rehearsal(): # dream
 
 
 
 
-train_nn
-   nn_past.loss( ctx, ctx[t-1] 
-   nn_fut.loss( ctx, ctx[t+1]
-   nn_bdi = b, d, i
+
+
+
+
 
 
 
