@@ -38,28 +38,34 @@ narratives (multi-statement procedural/declarative)
 
 
 def generate_event():
-    s = random
-    v = random
-    o = random
+    s = random.choice(pop)
+    v = random.choice( VERBS)
+    o = random.choice(pop)
 
 def train():
     
     # references (symbols)
     for i in range(N):
         
-       birth  -> x birth
-        
+       s1 = random.choice(pop)
+       v1 = random.choice( VERBS)
+       o1 = random.choice(pop)      
+       a.input1( s=s1, v=v1, o=o1 )       
+       a.action( speak s v o)
+       supervised()
+       
+       y give x, good x
+       x mate good
+       'is good'
+       parse ?
        
        
+       # concepts  too advnced for the puny human mind to grasp
        
-       action( speak s v o)
+     a.input1( s=s1, v=v1, o=o1 )    
+    setTimeout( 5/N ,  s t=_ed v=v1, o=o1  )
        
-       
-       
-       
-       
-       
-    x want   
+    inputEvent( 'x want', ''  ) 
     x believe ctx.set(believe)
     a hit b
     x bel a hit b   
@@ -67,31 +73,67 @@ def train():
     #n-ary relationships (social, dynamical)
     
     
-    _ed will
+    a.input1( s=s1, v=v1, o=o1 )    
+    setTimeout( 5/N ,  s t=_ed v=v1, o=o1  )
+        
+    a.input1( s=s1, v=v1, o=o1 t=will )
+    setTimeout(a.input1( s=s1, v=v1, o=o1 )
+     
     #propositions ( true/false statements)
     
         #IF AND OR NOT YES TRUE because
         
+        # situations
         
+        # and
+        'a and b hit c -> a hit c, b hit c'
+        'a hit and give c -> a hit c and give c'
+        
+         # or
+        'a and b hit c -> a hit c, b hit c'
+        'a hit and give c -> a hit c and give c'
+         
         #IF 
-        AND
-        OR NOT 
-        YES 
-        TRUE 
-        because
+        'if svo, o= svo'
+        
+     
+        'x hit c'
+        'x NOT hit y'
+        
+        #YES 
+        'x h y'
+        'x h y ?'
+        'yes'
+        
+        #TRUE 
+        
+        #because
+        'a speak b because a mother b'
+        'a mother b' -> 'a birth b'
     
     
-    #before after WHILE soon later _times
+    #before 
+    svo before svo
+    'x hit y before c give y'
+    after
+    
+    #after 
+    
+    
+    
+    #WHILE 
     '?'
     
-    can try should
-    x before y
+    #can 
     
     
-    'say me if blah'
-    'say me s = ?'
+    #try 
     
     
+    #should
+    
+    
+      
     self_play(1000)
    
         
@@ -99,25 +141,11 @@ def train():
 
 
     #planning
-    
-    
     #goal
     #wm loop steps
     
     
-    
-    insert_as_concept( x h c because c h x )
-    'x h c because c h x'
-
-
-
-
-
-    #speak()
-
-
-
-
+ 
     # x if y
     
     # x 'ed
@@ -140,12 +168,16 @@ def train():
 
     #def words
 
-    ( NEC txt)
-    ,(O TXT)                           # modal: necessary NEC, permitted, forbiden
-    ,(P txt) == (NOT (O (NOT TXT))) 
+    #( NEC txt)
+    #,(O TXT)                           # modal: necessary NEC, permitted, forbiden
+    #,(P txt) == (NOT (O (NOT TXT))) 
     
-    ,(know ,b, o) == (believe, b,o)
-    ,(inform , p, q, txt) == ( (believe p txt) => (say ,p , q txt))
+    
+    addDef(    ) # do you know/believe what they said of you?
+    
+    
+    #,(know ,b, o) == (believe, b,o)
+    addDef( 'inform  p, q, txt',  '(believe p txt) => (say ,p , q txt)' )
     ,(persuade, p ,q ,txt) == ((NOT (believe ,q, txt); say p ,q, txt), THEN, (believe q txt))
     ,(deny, p, txt) ==  (say ,p ,_ , NOT( txt))
     ,(suggest ,p, txt ==  (say p, (good txt))
@@ -183,21 +215,6 @@ def self_play(N):
         #set random goal ?
         env.step()
    
-    
-    
-    
-    #tell a story
-    
-    
-    
-''''    
-# testing
- 2here is b
- 
- if a hit b then ?:
-marry c
-g,h,i join attack c'''
-     
 
 
 
