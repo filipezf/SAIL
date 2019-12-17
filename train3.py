@@ -6,19 +6,6 @@ Created on Thu Dec 12 10:58:32 2019
 """
 
 '''
-_ I you someone them
-give hit speak 
-birth die
-IF AND OR NOT YES TRUE because
-want believe
-before after WHILE soon later _times 
-_ed will
-can try should
-
-ask answer order obey
-friend enemy child
-
-
 Language aquisition milestones
 ------------------------------
 basic ontology
@@ -30,168 +17,108 @@ narratives (multi-statement procedural/declarative)
 '''
 
 
-# before, after
- -> semantic predicto
- 
- #event processing
-
-
-
-def generate_event():
-    s = random.choice(pop)
-    v = random.choice( VERBS)
-    o = random.choice(pop)
+#generic verbs: v1 v2 v3 v20 ?
 
 def train():
     
-    # references (symbols)
-    for i in range(N):
-        
-       s1 = random.choice(pop)
-       v1 = random.choice( VERBS)
-       o1 = random.choice(pop)      
-       a.input1( s=s1, v=v1, o=o1 )       
-       a.action( speak s v o)
-       supervised()
-       
-       y give x, good x
-       x mate good
-       'is good'
-       parse ?
-       
-       
-       # concepts  too advnced for the puny human mind to grasp
-       
-     a.input1( s=s1, v=v1, o=o1 )    
-    setTimeout( 5/N ,  s t=_ed v=v1, o=o1  )
-       
-    inputEvent( 'x want', ''  ) 
-    x believe ctx.set(believe)
-    a hit b
-    x bel a hit b   
-       
-    #n-ary relationships (social, dynamical)
-    
-    
-    a.input1( s=s1, v=v1, o=o1 )    
-    setTimeout( 5/N ,  s t=_ed v=v1, o=o1  )
-        
-    a.input1( s=s1, v=v1, o=o1 t=will )
-    setTimeout(a.input1( s=s1, v=v1, o=o1 )
-     
-    #propositions ( true/false statements)
-    
-        #IF AND OR NOT YES TRUE because
-        
-        # situations
-        
-        # and
-        'a and b hit c -> a hit c, b hit c'
-        'a hit and give c -> a hit c and give c'
-        
-         # or
-        'a and b hit c -> a hit c, b hit c'
-        'a hit and give c -> a hit c and give c'
-         
-        #IF 
-        'if svo, o= svo'
-        
-     
-        'x hit c'
-        'x NOT hit y'
-        
-        #YES 
-        'x h y'
-        'x h y ?'
-        'yes'
-        
-        #TRUE 
-        
-        #because
-        'a speak b because a mother b'
-        'a mother b' -> 'a birth b'
-    
-    
-    #before 
-    svo before svo
-    'x hit y before c give y'
-    after
-    
-    #after 
-    
-    
-    
-    #WHILE 
-    '?'
-    
-    #can 
-    
-    
-    #try 
-    
-    
-    #should
-    
-    
+    step: e, nn[0,10]
+          age [ nn_age]
+          gender nn[gender]
+          
+      a e is N
+      a gender is N
+      a age is N
+      a is live / dead
       
-    self_play(1000)
-   
-        
-    save(model)    
+      predict x -> x happens -> positive reinforce
 
 
-    #planning
-    #goal
-    #wm loop steps
+nn[ag1][e] -> predict
+
+x:txt -> transform ->> action
+
+    rule( input x give -> txt: x 'give')  inner txt
+    rule( x give -> speak x 'give' )
     
-    
- 
-    # x if y
-    
-    # x 'ed
-     # x will
+    rule( x give y -> speak x 'give' y )
+    rule( x hit y -> speak x 'hit' y )
+
+    rule( input x speak tx -> txt: x 'speak' txt)  inner txt
+    rule( x speak txt y -> speak x 'txt' y )
+
+
+    input : x v y / z v w      txt ->    x v y WHILE z v w
+ pick svo1 svo2   txt svo1 before svo2
+  pick svo1 svo2   txt svo2 after svo1
+
+     x v y -> setTimeout( txt:  x v y -ed )
+     txt x v y will, ->  setTimeout( x v y, 0-5)
      
-     #x did p -> because q
+     txt x v y soon, ->  setTimeout( x v y, 0-5)
+      txt x v y later, ->  setTimeout( x v y, 10-20)
 
-    # x join against y
+     
+     input a vb avc avb  a v b 3 times
+     input avb    txt avb -ed
+     txt  avb
+
+because   <-> txt1 txt2  (causality) % 
+IF   <-> txt1 txt2  (causality) %
 
 
-  
-    
-    
-    
-    # lying / theory of mind
-    
-    
-    # if I do x then b will do y
-    
+    input a vo, b vo ->  a AND b vo
+          a v o  b v o c vo  -> AND a b c
+         a v o a v2 o -> a AND v v2 o
+         
+         a OR b will vo -> a vo  /// b v o
+         
+        a NOT vo -> b vo c vo
+        x v y ? NOT
+        x v y ? YES
 
-    #def words
+believe
 
-    #( NEC txt)
-    #,(O TXT)                           # modal: necessary NEC, permitted, forbiden
-    #,(P txt) == (NOT (O (NOT TXT))) 
+want 
+
+can 
+try 
+should
+
+
     
+# mate
+
+
+
+# parenting
+u += u_kin
+
+
+# reciprocal
+score[b] += help_hit b
+
+
+# ingroup / hierarchical
+ingroup[b]
+rank[x,b]
+
+# outgroup
+
+
+    s v o ?  
+    p as k q
+    q answer p
+
+    knowledge, uncertainty?
+        (Permit p, q ,txt) ==  (say p, q ( PERM txt)
+        
+        
     
-    addDef(    ) # do you know/believe what they said of you?
-    
-    
-    #,(know ,b, o) == (believe, b,o)
-    addDef( 'inform  p, q, txt',  '(believe p txt) => (say ,p , q txt)' )
-    ,(persuade, p ,q ,txt) == ((NOT (believe ,q, txt); say p ,q, txt), THEN, (believe q txt))
-    ,(deny, p, txt) ==  (say ,p ,_ , NOT( txt))
-    ,(suggest ,p, txt ==  (say p, (good txt))
-    ,(accept p, q txt) == (suggest p q txt, q say do txt)
-    ,(decline q, p ,txt)== (suggest p q txt, q say not txt)
-    ,(order p, q , txt)    
-    ,(order p, q ,txt ==  (p say  bad q not do txt)  # !
-    ,(ask p, q, txt) ==  (p want q say txt)           # ?
-    ,(answer q, p txt) == (p ask q txt, q say txt)
-    (Permit p, q ,txt) ==  (say p, q ( PERM txt)
-    (forbid p, q ,txt )==  (p say  bad q do txt)     
-    (lie ,q,p, txt) == (believe p txt);(  say ,q ,not txt) 
-    #pretend p txt:  p act if txt
-    #suppose p txt  : think p if txt
+    (order p, q ,txt   -> q txt 
+     order p q txt       NOT q txt  -> p hit q
+     
+     p say NOT a x y <-> p deny a x y
+     
      
     ,(join ,p, g) ==  NOT (IN, p, g ) => (IN ,p ,g)
     ,(separate, p, g)==  (IN, p, g ) => NOT(IN ,p ,g)
@@ -202,12 +129,38 @@ def train():
     ,(learn ,q, txt) ==  (NOT, know ,q ,txt => know ,t, txt) 
     
     
+    #,(know ,b, o) == (believe, b,o), o
+    
+    
+   ''' addDef( 'inform  p, q, txt',  '(believe p txt) => (say ,p , q txt)' )
+    ,(persuade, p ,q ,txt) == ((NOT (believe ,q, txt); say p ,q, txt), THEN, (believe q txt))
+
+    ,(suggest ,p, txt ==  (say p, (good txt))
+    ,(accept p, q txt) == (suggest p q txt, q say do txt)
+    ,(decline q, p ,txt)== (suggest p q txt, q say not txt)
+    (forbid p, q ,txt )==  (p say  bad q do txt)     
+    (lie ,q,p, txt) == (believe p txt);(  say ,q ,not txt) 
+    #pretend p txt:  p act if txt
+    #suppose p txt  : think p if txt'''
+   
     # metaphor
     #emotion
+    
+    p die
+    p will ?
+    
+    
+    
     #spirituality
+    
+    #? x can svo ,x not visible, x good
+    
+
     # narrative ??
-    #philosophy
+    # philosophy
     # math
+
+
 
 
 def self_play(N):
@@ -216,11 +169,4 @@ def self_play(N):
         env.step()
    
 
-
-
-
-
-    
-    
-    
     
