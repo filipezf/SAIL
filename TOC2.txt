@@ -1,0 +1,34 @@
+digital souls:
+
+
+INTRO:
+lambda cdm (past hypothesis) + GR + Standard Model
+-> selfish gene, ecology -> ev psy
+human evol, human brain
+
+
+
+
+RATIONALITY
+agent theory (aixi, intelligence as efficiency)
+   game theory -> coalitions
+
+IMPL:
+
+computational cognitive neuroscience ?
+neurons spiking
+hippocampus, episodic memory
+temporal,parietal lobes : semantic memory
+interleavng, dream catastrophic forgetting
+PFC basal ganglia -> action choice,  
+
+DOMAINS:
+
+commonsense logic VS deep bayesian planning relational neural turing RL network
+
+
+time/space/causality/magnitude
+social
+emotion
+humor art play /spirituality
+whatnot : music dance
