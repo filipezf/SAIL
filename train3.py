@@ -76,15 +76,15 @@ IF   <-> txt1 txt2  (causality) %
         x v y ? NOT
         x v y ? YES
 
-believe
 
-want 
+    # TODO
+    input I/b believe getBelief(b) -> toTxt
+    input I/b want getWant(b) -> toTxt
+    input I/b can getPossibleAction(b) -> toTxt
+    input I/b should getGoodeAction(b) -> toTxt
 
-can 
-try 
-should
 
-
+    
     
 # mate
 
@@ -106,7 +106,7 @@ rank[x,b]
 
 
     s v o ?  
-    p as k q
+    p ask q
     q answer p
 
     knowledge, uncertainty?
@@ -169,4 +169,11 @@ def self_play(N):
         env.step()
    
 
+
+
+
+
+    
+    
+    
     
