@@ -87,8 +87,60 @@ class Agent(ba.Agent):
         #uncertainty          
         #rehearsal(): # dream
         
+        #predict x -> x happens -> positive reinforce
+        
    def addReward(r):
        pass
    
+    
+   def u():
+           # mate
+
+        # parenting
+        u += u_kin
+        
+        
+        # reciprocal
+        score[b] += help_hit b
+        
+        
+        # ingroup / hierarchical
+        ingroup[b]
+        rank[x,b]
+        
+        # outgroup
+        
+        
+     #emotion
+
+      # happy -creativity / positive velency
+      
+      # sad - analytic focus / negative valence
+      
+      
+      # fear /anxiety -> focus
+      
+      # anger -> hurt target
+
+      #spirituality   #? x can svo ,x not visible, x good
+      
+      
+    pickEvent()
+    pickCause(svo)
+
+         
+    generateEvent()
+    imagineFuture(svo)  
+     getBelief()
+      b.getWant() 
+     getPossibleAction() 
+    getGoodAction()
+    
+    setTimeout()
+    def hear(ev ):
+        setInput( rndAg() speak ev)
+        
+    setTxt( ev )
+    desiredOut( speak ev ) 
     
         
