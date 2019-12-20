@@ -143,4 +143,9 @@ class Agent(ba.Agent):
     setTxt( ev )
     desiredOut( speak ev ) 
     
+    def setLang(, ev):
+        self.hear(ev )
+        self.setTxt( ev )
+        self.desiredOut( speak , ev ) 
+    
         
