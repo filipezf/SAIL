@@ -37,69 +37,84 @@ def e_level(ag):
     return 'high'
 
 
-def age_level():
+def age_level(ag):
     if ag.e < 20: return 'young'
     if ag.e < 40: return 'adult'
     return 'old'
     
-def setLang(ag, ev):
-    ag.hear(ev )
-    ag.setTxt( ev )
-    ag.desiredOut( speak ev ) 
+
 
 def train_a(ag):    
     
     # bias: hear x -> put x into txt buffer ?
     # bias: extend from single entity to generic entity
     
-        a = rA()
+     a = random.choice(pop)
       
          # agent has mapping from value to axis
-    ag.setTxt( a 'be' 'energy' e_level(a.e) )
-    ag.setTxt( a 'be' 'age' age_level(a.age) )    
-    ag.setTxt( a 'be' 'gender' a.gender )  
-    ag.setTxt( a 'be' 'live' if a in pop else 'dead' )      
 
+    #energy age gender live;dead
 
-    v = give/hit
-    ag.setInput(x v y)
-   setLang(ag,  x v y )
+    ag.setTxt( a ,'be', 'energy', e_level(a.e) )     # s v o o2
+    ag.setTxt( a ,'be', 'age' ,age_level(a.age) )    
+    ag.setTxt( a ,'be' ,'gender', a.gender )  
+    ag.setTxt( a ,'be', 'live' if a in pop else 'dead' )      
+
+    # give hit
+
+    v = random.choice( ['give' ,'hit'] )
+    x,y = random.choice(pop),  random.choice(pop)
+    ag.setInput(x ,v, y)
+    ag.setLang(  x ,v ,y )
+    
+    # speak
     
     v = speak
-    ag.setInput(x v y)
-    setLang(ag,  x speak y txt)
+    txt = pickEvent()
+    ag.setInput(x, v ,y)             # s v o o2
+    ag.setLang(  x , v ,y, txt)
     
-    svo = pickEvent()
-    svo2 = pickEvent()
+    
+    #while before after
+    
+    svo = ag.pickEvent()
+    svo2 = ag.pickEvent()
     
     w= WHILE
     if svo.t < svo2.t: w = before
     if svo.t > svo2.t: w = after    
-    setLang(ag,  svo w svo2)
+    ag.setLang(  svo ,w ,svo2)
+    
+    
+    # -ed will soon later 
     
     svo = ag.pickEvent()   
-    setLang(ag,  speak svo -ed ) 
+    ag.setLang( svo, _ed ) 
         
-    svo=createEvent()
+    svo = createEvent()
     dt = random.randint(0,10)
     w = ''
     if coin(0.5):
-        w = soon if dx < 5 else later        
-    setTimeout( svo , dt )
-    setLang(svo will w)
+        w = soon if dt < 5 else later        
+    ag.setTimeout( setInput , dt , svo )
+    ag.setLang(svo, will, w)
     
     
+    # and or not
     
-    ag.setInput([a v o, b v o ] )
-    setLang( (AND a b) v o )
+    a,b,o = random.sample(pop,3)
+    v= random.choice( ['give' ,'hit'] )
     
-    ag.setInput([a v o, b v o, cvo ] )
-    setLang( (AND a b c) v o )
+    ag.setInput( [(a ,v, o), (b ,v ,o) ] )
+    ag.setLang( (AND ,a, b) ,v, o )
+    
+    ag.setInput( [(a ,v, o), (b ,v ,o), (b ,v ,o) ] )
+    ag.setLang( (AND ,a, b,c) ,v, o )
     
     ag.setInput([a v o, a v2 o ] )
-    setLang( a (AND v v2) o )
+    ag.setLang( a (AND v v2) o )
          
-    setLang( (OR a b) v o )
+    ag.setLang( (OR a b) v o )
     x = a if coin(0.5) else b
     setTimeout( ag.setInput( x v o)  )
 
@@ -107,27 +122,29 @@ def train_a(ag):
     #    x v y ? NOT
     #    x v y ? YES
         
-        
+    
+
+    # if because
+    
     svo = ag.pickEvent()
     svo2 = ag.pickCause(svo)
     if svo2 is not None:
-         setLang( svo2 because svo )
+         ag.setLang( svo2 ,because, svo )
          
     svo = ag.generateEvent()
     svo2 = ag.imagineFuture(svo)     
-    setLang( IF svo svo2 )
+    ag.setLang( IF, svo ,svo2 )
 
 
     # questions
 
-    # TODO
+    # believe want can should
     
-    b = ag if coin(0.5) else rA()
-    b = rA()
-    setLang( b believe b.getBelief() )
-    setLang( b want  b.getWant() )
-    setLang( b can getPossibleAction() )
-    setLang( b should getGoodAction() )
+    b = ag if coin(0.5) else random.choice(pop)
+    ag.setLang( b, believe, b.getBelief() )
+    ag.setLang( b, want,  b.getWant() )
+    ag.setLang( b, can, getPossibleAction() )
+    ag.setLang( b, should, getGoodAction() )
       
      # ask / answer
 
@@ -135,68 +152,65 @@ def train_a(ag):
     #    (Permit p, q ,txt) ==  (say p, q ( PERM txt)
         
      
+    
+    b,c,d,e = random.sample(pop,4)
+    v,v1, v2, v3 = random.sample( ['give' ,'hit', 'v1', 'v2', 'v3'],4)
+        
     # order
-    setInput(b speak (c v1 !) )
-    setInput(c v1 )
-    setLang( b order (c v1), t=4 )
+    ag.setInput(b ,speak, (c, v1, '!') )
+    ag.setInput(c ,v1 )
+    ag.setLang( b ,order ,(c ,v1), t=4 )
     
-    setInput( d speak (d v2 !) , t=1)
-    setInput( e v3 , t=2)
-    setInput( d hit e, t=3)
+    ag.setInput( d speak (d, v2, '!') , t=1)
+    ag.setInput( e, v3 , t=2)
+    ag.setInput( d, hit, e, t=3)    
+    ag.setLang( d, order (e ,v2), t=4 )
     
-    setLang( d order (e v2), t=4 )
-    
-
      
      # forbid
-     setInput (  b speak (c NOT v1!) )
-     setLang( b forbid c v1)
+     ag.setInput (  b, speak, (c ,NOT, v1, '!') )
+     ag.setLang( b ,forbid, c, v1)
      
      
      # member_of
-     setLang( c member_of g)
-     
-     
+     G = random.sample(pop, 5)     
+     ag.setLang( c, member_of, g)   # innate concept ?
+          
      
      # join
-     setTxt( c NOT member_of G )
-     setLang( c join G)
-     setTxt(c member_of G)
+     ag.setTxt( d ,NOT, member_of, G )
+     ag.setLang( d ,join, G)
+     ag.setTxt(c ,member_of, G)
      
      #friend
-      setTxt( c e low)
-      setInput(b give c)
-      setLang( b friend c)
+     ag.setTxt( c ,be ,e ,low)
+     ag.setInput(b ,give, c)
+     ag.setLang( b ,friend, c)
       
      #enemy / antonym
-      setTxt( b NOT friend c)
-      setTxt( c e low)
-      setInput( b give c)
-     setLang( b enemy c)
-      
-      
+     ag.setTxt( b, NOT, friend, c)
+     ag.setTxt( c , 'be' ,e, low)
+     ag.setInput( b ,hit, c)
+     ag.setLang( b ,enemy, c)
+            
      
      # revenge
-     setTxt( a hurt b)
-     setTxt( b hurt a )
-      setLang( b revenge, a)
+     ag.setTxt( a, hurt, b)
+     ag.setTxt( b ,hurt a )
+     ag.setLang( b revenge, a)
 
         
      #betray
-     setTxt( a hurt b)
-     setTxt( b hurt a )
-     setLang( b revenge, a)
-      
-         ,(betray a, b)== (believe ,a ,(friend, b,a)) => hurt(b,a)
+        #  ,(betray a, b)== (believe ,a ,(friend, b,a)) => hurt(b,a)
          
          
      # lie
-     setInput( a h b)
-     setTxt( c believe a h b)
-     setInput( c speak f h d)
-     setInput( d speak a h b)
-     setLang( c lie )
-     setLang( d truth_tell )     
+     ag.setInput( a, v ,b)
+     ag.setTxt( c ,believe,( a ,v, b))
+     ag.setInput( c ,speak ,(f ,h, d))
+     ag.setInput( d ,speak ,(a, h, b))
+     ag.setLang( c ,lie )
+     ag.setLang( d ,truth_tell )     
        
      # pretend      
      # suppose      
@@ -224,11 +238,11 @@ def train_a(ag):
      values, vengeance, virtues, and will"""
     
     
-    setInput( b die -ed)
-    setInput(c speak ag ( b will v?) )
+    ag.setInput( b, die )
+    ag.setInput( c ,speak , ag, ( b, will 'o?') )
     
-    ag.setInput((c speak  IF (ag die) (ag will v?) ))
-    #setInput( c speak 'If you die then you will ?')
+    ag.setInput(c, speak  ,(IF ,(ag ,die), (ag ,will ,'o?' ) ))
+    #setInput( c speak 'If you die then what will you do ?')
     
     
     # understand/generate metaphors
@@ -240,3 +254,12 @@ def self_play(N):
         #set random goal ?
         env.step()
    
+
+
+
+
+
+    
+    
+    
+    
