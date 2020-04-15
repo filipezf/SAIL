@@ -1,0 +1,158 @@
+#uses
+videogame
+healthcare / chatbots
+study the cogniton of philosophy, math, science, art, religion , etc
+humanity ultimate goals / AI alignment
+
+
+# AIXI -> efficiency problem
+# no-free-lunch theorem ? universe patterns
+
+-> download python project
+# event -based cognition
+# episodic memory ( personality?)
+# procedural memory
+
+
+#loose-coupling
+ expandible
+->grounding
+ex: ask agent about colors -> does not compute <https://en.wikipedia.org/wiki/Does_not_compute>
+
+-> pattern recognizer
+P( event | past_events)
+-> generator
+
+capability / affordance:
+
+situation s agnt a can do xyz
+multiscale
+what if...
+
+
+
+#logic + connectionism?
+
+# basic words ?
+simple -> complex ?
+
+
+#pragmtics?
+
+
+
+
+
+# magnitude
+#time space theory of mind - decision
+
+
+#example cases:
+xxxxxxxxxx
+
+
+-> function loss f() -> gradient ?
+supervised / RL
+curiosity
+
+
+
+loop self-play / game theory
+alphago?
+
+
+<pre>
+
+pre_train scenarios ?
+for n in range(1000):
+    build pop[100]
+    for t in range(50):
+         eval agent_i
+     save consequence
+     save loss
+ 
+</pre>
+
+crowdsource
+read books/media
+
+nn:  model  agent capability
+<names>
+can do try if and or not yes
+before after while
+ want like 
+
+kin terms:?
+
+understand language -> generate
+
+
+
+
+#  ? does it need  real-world embodiment?
+- complete turing test
+- cartesian agent / reaction time
+
+
+
+
+
+QFT/GR /SM ?
+naive physics
+
+
+inter-group
+intra-group
+kin (sibling, parenting)
+
+male-male
+female-female
+
+
+happy
+sad
+anger
+fear
+
+guilt
+shame
+pride
+pity 
+
+
+<body/facial expressions>
+art humor, 
+
+#semantic memory -> 
+
+
+
+
+# basic words
+
+# commonsense ?
+
+
+
+#training:
+download app, train, push request ?
+
+# episodic memory
+
+cellphone = talk(a,b) info a->b
+#hidden / space model ?
+
+# writer as using the same engine of agent
+
+# basic commands:
+> tell story about ...
+> once upo a time...
+
+
+set_mind(ag1, expr)
+advance x years
+backward
+ag1.e = 0
+
+
+
