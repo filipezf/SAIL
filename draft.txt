@@ -1,161 +1,286 @@
-# create generic past
+# ??? Project
 
-for ():
-	random events():
+#uses
+videogame
+healthcare / chatbots
+commonsense impl in AI.
+study the cogniton of philosophy, math, science, art, religion , etc
+humanity ultimate goals / AI alignment
 
 
+### using it:
+see <malleable.systems>
 
-def step():
-   for i in range(100):	
-   if done >0 
-	break 
+- download repository
+-python -m model_1.th 
 
+-comma on/off
+- ,generate random pop
+- z(" generate random pop")
 
-def step0():
-     logarithmic_ts
-      stripes = stripes + G*stripes1    #wm
-        # supervised
+- enter characters
+- print( 2 + 3)
+     5
+-make me a coffee (TODO)
+- bring world peace (TODO)
 
-     u = mate + energy + friend+ reciprocal + kin
 
-     
-     nn_all --ctrol--> hip   complete pattern
-     hip --ctrol--> nn_all
+### training
 
-    short_term_mem 
-    store traces
 
-    # replan ?
-     
+### contributing
+1. more training scenes
+2. pull request
 
 
-    x_believe -> gate beliefs
 
-    x_before 
-    x_after,
-    x_can
+-----------------------------------------------------------------
+#uses
+# writer as using the same engine of agent
 
-   for i in range(N):
-       layer[i+1] = ReLU(layer[i] )
-   multimodal
+#### videogame
 
-   layer[i+1] = ctx + RELU( layer[i] )
+# basic commands:
+> tell story about ...
+> once upon a time...
 
 
+set_mind(ag1, expr)
+advance x years
+backward
+ag1.e = 0
 
 
-wm_ctx/task # stripes
+healthcare / chatbots
 
-generate
 
-ctx -> automatic vs generic
 
-generic -> cache memory
+commonsense impl in AI.
 
 
 
-uncertainty
 
+study the cogniton of philosophy, math, science, art, religion , etc
 
 
-rehearsal(): # dream
 
 
+humanity ultimate goals / AI alignment
 
 
 
 
 
+socket connection -> json inspect agent etc
 
 
+-----------------------------------------------------------------------
+FAQ
+# when you published this, did you consider the risk that:
+ - the AI may take the world bacause of a bug or other unexpected interactions
+ - the universe may tunnel to  bubble of true vacuum, OR EVEN a state of maximum suffering (anti-hedonium)
 
+---------------------------------
 
-ev = []
+Agent theory:
 
-ev[i] = ev[j]
+on the most general level the agent saves a model of possible future states of the world given the past
+and uses them to choose the best action:
 
+hierarchical abstractions of relevant sets of states generate the concepts/ words
 
-magnitude
-bigger, smaller, compare
 
+# How this can make me rich/famous/get laid/ increase the share of my genes on the future gene pool, cure cancer, bring utopia?
 
-process
+understand people -> act -> profit! / get laid 
 
+RL / supervised
+ai russell norvig book
 
-introspection:
-  get goal
-  set goal
-  get/set belief
-  model _self
+# AIXI -> efficiency problem
+# no-free-lunch theorem ? universe patterns
 
 
+#loose-coupling
+ expandible
+->grounding
+ex: ask agent about colors -> does not compute <https://en.wikipedia.org/wiki/Does_not_compute>
 
-# answer questions abous past, future, capabilities, goals
 
+rigid clustering entanglement
+# environment
 
 
-# get food
+task-focused <-> daydreaming (default network)
 
+# event -based cognition
+# episodic memory ( personality?)
+# procedural memory
 
+--------------------------------------------------------------
+-> pattern recognizer
+P( event | past_events)
+-> generator
 
-# ask mate
+capability / affordance:
 
+situation s agnt a can do xyz
+multiscale
+what if...
 
 
-# lie
-# detect (?) lie
+# abstract words: relation concept absract
 
 
 
+#logic + connectionism?
 
-# call partners to hit enemy
-# receive call
+# basic words ?
+simple -> complex ?
 
 
+#pragmtics?
 
 
 
-# train nn
 
 
+# magnitude
+#time space theory of mind - decision
 
-# pretend play ( utility of this decreases with agent's network "age" )
 
+#example cases:
+xxxxxxxxxx
 
-# tell a story
 
+-> function loss f() -> gradient ?
+supervised / RL
+curiosity
 
-# feel happy (birth child), sad (death kin)
 
 
+loop self-play / game theory
+using self-play the hope is to expand coverage of the situations in the dataset to cover all(most)
+possible situations. 
 
-# ask join group
+logic-basd commonsesne:
+-
 
 
-# tell a gossip
+alphago?
 
 
-#
+<pre>
 
+pre_train scenarios ?
+for n in range(1000):
+    build pop[100]
+    for t in range(50):
+         eval agent_i
+     save consequence
+     save loss
+ 
+</pre>
 
-# tell a joke
+crowdsource
+read books/media
 
-# answer what happen after dead
+nn:  model  agent capability
+<names>
+can do try if and or not yes
+before after while
+ want like 
 
+kin terms:?
 
-# ask help big agent
+understand language -> generate
 
 
 
 
+#  ? does it need  real-world embodiment?
+- complete turing test
+- cartesian agent / reaction time
 
 
 
 
 
+QFT/GR /SM ?
+naive physics
 
+--------------------------------------------------------------
+innate biases/drives
 
 
+inter-group
+intra-group
+kin (sibling, parenting)
 
+male-male
+female-female
 
 
+happy
+sad
+anger
+fear
+
+guilt
+shame
+pride
+pity 
+
+
+<body/facial expressions>
+art humor, 
+
+#semantic memory -> 
+
+
+
+
+# basic words
+
+# commonsense ?
+
+
+
+#training:
+download app, train, push request ?
+
+# episodic memory
+
+----------------------------------------------
+# adding input/output , other senses, ontology
+cellphone = talk(a,b) info a->b
+#hidden / space model ?
+
+###
+
+-----------------------------------------------
+
+who decide AI: benevolent dictator, democracy, coin toss...
+opposite tribesmen decide what to do to the future
+in the future each man will have 3 women for him and vice versa
+
+#messing with human naure:
+what-if...
+messing w/ orgasm brain area
+
+
+silili snaps finger - infinitely good for ever : and what has already happened / mutiver / define good
+
+
+fitness - increase participation in the future, genghis khan: von-neumann probes at light speed convert universe to user dna -> tunnels to dna, nucleotide maximum
+ai-cracy
+non-euclidean geommetry, explorers / darwinian reprocudtion at hyperbolic ever-increasing world 
+(branch, hilbert state ray) universe tunnels to maximum anti-hedonium / poincare recurrence
+2-dimensional time
+euclidean spacetime/ once and for all map of stories
+<consciousness criptographed s. aaronson>
+block universe, CD with life's civilization's data -> do we need it ?
+running among the fields of  hay forever at the digits of Pi
+lawful universe (ours), more complexity, fractal, random pattern universe, no free lunch, maximally perverse universe, AIXI
+economics of maximization at limitless situation -> ? 
+math structures contain other math structures ad-infinitum
